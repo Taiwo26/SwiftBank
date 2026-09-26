@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./CSS/dashboard.css">
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <aside class="col-lg-2 p-0 sidebar">
+            <div class="logo">
+                <img src="./Assets/swiftlogo.png" alt="">
+                <span class="name">SwiftBank</span>
+            </div>
+
+            <div class="nav-label">Menu</div>
+            <div class="menu">
+                <div><a class="menu-link active" href="dashboard.html"><i class="bi bi-grid-fill"></i> Dashboard</a></div>
+                <div><a class="menu-link" href="transfer.html"><i class="bi bi-arrow-left-right"></i> Transfer</a></div>
+                <div><a class="menu-link" href="history.html"><i class="bi bi-clock-history"></i> History</a></div>
+                <div><a class="menu-link" href="bills.html"><i class="bi bi-receipt"></i> Bills</a></div>
+                <div><a class="menu-link" href="cards.html"><i class="bi bi-credit-card"></i> Cards</a></div>
+            </div>
+
+            <div class="nav-label">Account</div>
+            <div class="menu">
+                <div><a class="menu-link" href="profile.html"><i class="bi bi-person"></i> Profile</a></div>
+                <div><a class="menu-link" href="settings.html"><i class="bi bi-gear"></i> Settings</a></div>
+            </div>
+
+            <!-- <hr> -->
+            <div class="side-foot" id="logout">
+                <a href="sign-in.html">
+
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
+            </div>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <div class="mobile-topbar d-lg-none">
+            <button style="margin-left: 20px;" class="hamburger" id="hamburger">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="d-flex align-items-center gap-2">
+                <img src="./Assets/swiftlogo.png" width="28" height="28" alt="">
+                <span style="font-weight:700; font-size:15px;">SwiftBank</span>
+                <!-- <p>okay</p> -->
+                <!-- <div class="profile">
+                    <div class="user-avatar">TA</div>
+                    <span>Taiwo A.</span>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="col-lg-10 p-4">
+            <div class="row align-items-center mb-4 main-header">
+
+            <div class="col-lg-6">
+                <span style="font-size:12px; color:#94A3B8;" id="greeting">Good morning,</span>
+                <h3 style="font-size:18px; font-weight:700; color:#0F172A; margin:2px 0 0;">
+                    <span id="userName">Taiwo Ayorinde</span> 👋
+                </h3>
+            </div>
+
+                <div class="col-lg-6">
+
+                    <div class="d-flex justify-content-end align-items-center gap-3">
+                        <input type="text" placeholder="search transactions">
+
+                        <div class="notify">
+                            <i class="bi bi-bell"></i>
+                            <span class="notif-dot"></span>
+                        </div>
+
+                        <div class="profile">
+                            <div class="user-avatar">TA</div>
+                            <span>Taiwo A.</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-xl-6">
+                    <div class="balance-card">
+                    <div class="stack-top">
+                        <div>
+                        <div class="bal-label">Total balance</div>
+                        <div class="bal-amount-row">
+                            <div class="bal-amount" id="balanceAmount">₦2,450,000.00</div>
+                            <button class="bal-eye" id="toggleBalance">
+                            <i class="bi bi-eye" id="eyeIcon"></i>
+                            </button>
+                        </div>
+                        </div>
+                        <div class="trend-pill">↑ 4.2% this week</div>
+                    </div>
+                    <div class="bal-bottom">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="bal-acct" id="accountNumber">**** **** **** 4821</div>
+                            <span class="acct-badge">Savings</span>
+                        </div>
+                        <svg width="120" height="32" viewBox="0 0 120 32">
+                            <polyline points="0,26 15,22 30,24 45,16 60,18 75,10 90,12 105,5 120,8"
+                            fill="none" stroke="#6EE7B7" stroke-width="2"/>
+                        </svg>
+                        </div>
+                    </div>
+                    <!-- actiiooon -->
+                    <div class="qa">
+                        <!-- <h5 class="quick">Quick Actions</h5> -->
+                        <div class="actions">
+                            <div class="qa-item">
+                                <a class="item-link" href="transfer.html">
+                                    <div class="qa-icon"><i class="bi bi-send"></i></div>
+                                    <span>Send</span>
+                                </a>
+                            </div>
+                            <div class="qa-item">
+                                <a class="item-link" href="bills.html">
+                                    <div class="qa-icon"><i class="bi bi-download"></i></div>
+                                    <span>Airtime</span>
+                                </a>
+                            </div>
+                            <div class="qa-item">
+                                <a class="item-link" href="bills.html">
+                                    <div class="qa-icon"><i class="bi bi-lightning"></i></div>
+                                    <span>Pay Bills</span>
+                                </a>
+                            </div>
+                            <div class="qa-item">
+                                <a class="item-link" href="cards.html">
+                                    <div class="qa-icon"><i class="bi bi-credit-card"></i></div>
+                                    <span>Cards</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-xl-2">
+                    <div>
+                        
+                    </div>
+                </div> -->
+                
+                <div class="col-xl-6">
+                    <div class="chart">
+                        <div class="semi-chart">
+                            <div class="chart-label">
+                                Monthly spend
+                                <div>
+                                    <select class="semi-label" name="" id="">
+                                        <option value="">This month</option>
+                                        <option value="">Last month</option>
+                                    </select>
+                                    <!-- month -->
+                                </div>
+                            </div>
+                            <div class="spent">₦450,500.00</div>
+                            <span>↓ 12% vs last month</span>
+                            <br> <br>
+                            <div>
+                                <svg width="120" height="32" viewBox="0 0 120 32">
+                                    <polyline points="0,26 15,22 30,24 45,16 60,18 75,10 90,12 105,5 120,8"
+                                    fill="none" stroke="#F87171" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="col-xl-2">
+
+                </div> -->
+
+            </div>
+
+            <!-- Middle -->
+
+
+
+            <!-- Promo Banner -->
+                <div class="promo-banner">
+                    <div class="promo-left">
+                        <span class="promo-tag">Limited offer</span>
+                        <h4>Get 5% cashback on all bill payments this month 🎉</h4>
+                        <p>Pay your electricity, TV subscription, or data bills and earn cashback instantly.</p>
+                        <a href="bills.html" class="promo-btn">Pay bills now →</a>
+                    </div>
+                    <div class="promo-right">
+                        💰
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-12">
+                        <div class="goal-card">
+                            <div class="goal-head">
+                                <div class="goal-icon">🎯</div>
+                                <div class="goal-info">
+                                    <h5>Rent Fund</h5>
+                                    <span>Target: ₦600,000 by Dec 2026</span>
+                                </div>
+                                <div class="goal-percent">58%</div>
+                            </div>
+                            <div class="limit-track goal-track">
+                                <div class="limit-fill" style="width:58%; background:#2563EB;"></div>
+                            </div>
+                            <div class="goal-foot">
+                                <span>₦348,000 saved</span>
+                                <span>₦252,000 to go</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 mt-1">
+                        <!-- <div class="col-12">
+                            
+                        </div> -->
+                        <div class="col-12">
+                            <div class="goal-card goal-green">
+                                <div class="goal-head">
+                                    <div class="goal-icon goal-icon-green">🛡️</div>
+                                    <div class="goal-info">
+                                        <h5>Emergency Fund</h5>
+                                        <span>Target: ₦300,000 by Mar 2027</span>
+                                    </div>
+                                    <div class="goal-percent goal-percent-green">34%</div>
+                                </div>
+                                <div class="limit-track goal-track">
+                                    <div class="limit-fill" style="width:34%; background:#10B981;"></div>
+                                </div>
+                                <div class="goal-foot">
+                                    <span>₦102,000 saved</span>
+                                    <span>₦198,000 to go</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+            <!-- Bottom -->
+
+            
+            <div class="row g-4 mt-1">
+                <div class="col-12">
+                    <div class="q-action">
+                        <div class="q-head">
+                            <h3>Recent Beneficiaries</h3>
+                            <a href="">Add beneficiary</a>
+                        </div>
+                        <div class="q-peeps">
+                            <div class="q-peeps-icon">
+                                <div style="background: linear-gradient(135deg, #2563EB, #7C3AED);">CA</div>
+                                <p>Chukwu A.</p>
+                            </div>
+                            <div class="q-peeps-icon">
+                                <div style="background: linear-gradient(135deg, #10B981, #0891B2);">AM</div>
+                                <p>Amaka M.</p>
+                            </div>
+                            <div class="q-peeps-icon">
+                                <div style="background: linear-gradient(135deg, #F59E0B, #EF4444);">TB</div>
+                                <p>Tunde B.</p>
+                            </div>
+                            <div class="q-peeps-icon">
+                                <div style="background: linear-gradient(135deg, #8B5CF6, #EC4899);">FK</div>
+                                <p>Fatima K.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="row g-4 mt-1">
+
+                <div class="col-xl-7">
+                    <div class="txn-panel">
+                        <div class="txn-panel-header">
+                            <h3>Recent Transactions</h3>
+                            <a href="history.html">See all</a>
+                        </div>
+                       
+                        <div class="txn-row">
+                            <div class="txn-icon credit">
+                                <i class="bi bi-arrow-down-left"></i>
+                            </div>
+                            <div class="txn-info">
+                                <div class="txn-name">Salary — SQI College</div>
+                                <div class="txn-date">Today, 08:12</div>
+                            </div>
+                            <div class="txn-amount credit">+₦180,000</div>
+                        </div>
+
+                        <div class="txn-row">
+                            <div class="txn-icon debit">
+                                <i class="bi bi-arrow-up-right"></i>
+                            </div>
+                            <div class="txn-info">
+                                <div class="txn-name">EKEDC Electricity</div>
+                                <div class="txn-date">Yesterday, 19:47</div>
+                            </div>
+                            <div class="txn-amount debit" style="color:#1E293B;">−₦12,500 </div>
+                        </div>
+
+                        <div class="txn-row">
+                            <div class="txn-icon debit">
+                                <i class="bi bi-arrow-up-right"></i>
+                            </div>
+                            <div class="txn-info">
+                                <div class="txn-name">Transfer — Chukwu A.</div>
+                                <div class="txn-date">Mon, 14:30 </div>
+                            </div>
+                            <div class="txn-amount debit">-₦50,000 </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5">
+
+                    <div class="limit">
+                    <div class="semi-limit">
+                        <h5>Spending limits</h5>
+                        <a href="history.html">Edit</a>
+                    </div>
+
+                    <div class="limit-row">
+                        <div class="semi-limit">
+                            <div>Daily withdrawal</div>
+                            <span>₦200K / ₦500K</span>
+                        </div>
+                        <div class="limit-track">
+                        <div class="limit-fill" style="width:40%; background:#2563EB;"></div>
+                        </div>
+                    </div>
+
+                    <div class="limit-row">
+                        <div class="semi-limit">
+                        <div>Daily purchase</div>
+                        <span>₦650K / ₦1M</span>
+                        </div>
+                        <div class="limit-track">
+                        <div class="limit-fill" style="width:65%; background:#F59E0B;"></div>
+                        </div>
+                    </div>
+
+                    <div class="limit-row">
+                        <div class="semi-limit">
+                        <div>Online transactions</div>
+                        <span>₦450K / ₦750K</span>
+                        </div>
+                        <div class="limit-track">
+                        <div class="limit-fill" style="width:60%; background:#10B981;"></div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <footer class="app-footer">
+                <div class="app-footer-inner">
+                    <span>© 2026 SwiftBank. All rights reserved.</span>
+                    <div class="app-footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+
+    </div>
+</div>
+
+
+<script type="module" src="./Script/firebase.js"></script>
+<script type="module" src="./Script/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./CSS/transfer.css">
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <aside class="col-lg-2 p-0 sidebar">
+            <div class="logo">
+                <img src="./Assets/swiftlogo.png" alt="">
+                <span class="name">SwiftBank</span>
+            </div>
+
+            <div class="nav-label">Menu</div>
+            <div class="menu">
+                <div><a class="menu-link" href="dashboard.html"><i class="bi bi-grid-fill"></i> Dashboard</a></div>
+                <div><a class="menu-link active" href="transfer.html"><i class="bi bi-arrow-left-right"></i> Transfer</a></div>
+                <div><a class="menu-link" href="history.html"><i class="bi bi-clock-history"></i> History</a></div>
+                <div><a class="menu-link" href="bills.html"><i class="bi bi-receipt"></i> Bills</a></div>
+                <div><a class="menu-link" href="cards.html"><i class="bi bi-credit-card"></i> Cards</a></div>
+            </div>
+
+            <div class="nav-label">Account</div>
+            <div class="menu">
+                <div><a class="menu-link" href="profile.html"><i class="bi bi-person"></i> Profile</a></div>
+                <div><a class="menu-link" href="settings.html"><i class="bi bi-gear"></i> Settings</a></div>
+            </div>
+
+            <!-- <hr> -->
+            <div class="side-foot">
+                <a href="sign-in.html">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <div class="mobile-topbar d-lg-none">
+            <button style="margin-left: 20px;" class="hamburger" id="hamburger">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="d-flex align-items-center gap-2">
+                <img src="./Assets/swiftlogo.png" width="28" height="28" alt="">
+                <span style="font-weight:700; font-size:15px;">SwiftBank</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="col-lg-10 p-4">
+
+            <!-- Header -->
+            <div class="row align-items-center mb-4 main-header">
+
+            <div class="col-lg-6">
+                <span style="font-size:12px; color:#94A3B8;">Good morning,</span>
+                <h3 style="font-size:18px; font-weight:700; color:#0F172A; margin:2px 0 0;">Taiwo Ayorinde 👋</h3>
+            </div>
+
+                <div class="col-lg-6">
+
+                    <div class="d-flex justify-content-end align-items-center gap-3">
+                        <input type="text" placeholder="search transactions" id="searchTransactions">
+
+                        <div class="notify">
+                            <i class="bi bi-bell"></i>
+                            <span class="notif-dot"></span>
+                        </div>
+
+                        <div class="profile">
+                            <div class="user-avatar">TA</div>
+                            <span>Taiwo A.</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Balance Row -->
+
+            <div class="row g-4">
+
+                <div class="col-xl-6">
+
+                </div>
+
+                <div class="col-xl-2">
+                </div>
+                
+                <div class="col-xl-4">
+
+                </div>
+
+                <!-- <div class="col-xl-2">
+
+                </div> -->
+
+            </div>
+
+            <!-- Middle -->
+
+            <div class="row g-4 mt-1">
+
+                <div class="col-xl-8">
+                    <div class="transfer">
+                        <div>
+                            <h3>Send money</h3>
+                            <span>Transfer funds to any designated Nigerian bank instantly</span>
+                        </div>
+                        <div class="transfer-form">
+                            <div class="mb-2 acct">
+                                <label for="fullName" class="form-label ">Recipient account number</label>
+                                <div class="input-wrap">
+                                    <input type="text" class="form-control" id="accountNumber" placeholder="Enter 10-digit account number" required maxlength="10">
+                                    <button class="verify">verify</button>
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Bank</label>
+                                <select id="bank" class="form-select">
+                                    <option value="" disabled selected>Select recipient bank</option>
+                                    <option value="GTBANK">GTBANK</option>
+                                    <option value="Access Bank Nigeria">Access Bank Nigeria</option>
+                                    <option value="United Bank Of Africa">United Bank Of Africa</option>
+                                    <option value="First Bank PLC">First Bank PLC</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="fullName" class="form-label ">Recipient Name</label>
+                                <input type="text" class="form-control" id="recipientName" placeholder="Taiwo Ayorinde" required>
+                                <div class="invalid-feedback">Required.</div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="fullName" class="form-label ">Amount</label>
+                                <input type="text" class="form-control" id="amount" placeholder="" required>
+                                <div class="invalid-feedback">Required.</div>
+                            </div>
+                            <small>Available balance: <span id="availableBalance" style="color:#10B981; font-weight:600;">Loading...</span></small>
+                            <div class="mb-2">
+                                <label for="fullName" class="form-label ">Description(Optional)</label>
+                                <input type="text" class="form-control" id="description" placeholder="Enter transaction decription here..." required>
+                                <div class="invalid-feedback">Required.</div>
+                            </div>
+                        </div>
+
+                        <button id="proceedBtn" class="btn btn-primary confirm">Proceed to confirm</button>
+                    </div>
+                    <div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-4">
+                    <div class="right" id="pinSection" style="display: none;">
+                        <div>
+                            <h5>Confirm with PIN</h5>
+                            <small>Enter your 4-digit transaction pin</small>
+                        </div>
+                        <div class="transfer-pin">
+                            <input class="pin" type="text" maxlength="1">
+                            <input class="pin" type="text" maxlength="1">
+                            <input class="pin" type="text" maxlength="1">
+                            <input class="pin" type="text" maxlength="1">
+                        </div>
+                        <button id="confirmBtn" class="btn btn-primary con-trans">Confirm transer</button>
+                    </div>
+                    <br>
+                    <div class="recent">
+                        <div class="sub-recennt">
+                            <h5>recent transfers</h5>
+                            <a href="">View all</a>
+                        </div>
+                        <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#2563EB,#7C3AED)">CA</div>
+                            <div class="rec-info">
+                                <div class="rec-name">Chukwu A.</div>
+                                <span class="rec-bank">GTBank. 0123456789</span>
+                                </div>
+                                <div class="rec-right">
+                                    <div class="rec-amount">−₦50,000</div>
+                                    <span class="rec-date">July 02, 2026 - 2:15 PM</span>
+                                </div>
+                            </div>
+
+                            <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#2563EB,#7C3AED)">WP</div>
+                            <div class="rec-info">
+                                <div class="rec-name">Wiener P.</div>
+                                <span class="rec-bank">OPAYCOM. 8106868241</span>
+                                </div>
+                                <div class="rec-right">
+                                    <div class="rec-amount">−₦25,000</div>
+                                    <span class="rec-date">June 30, 2026 - 12:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#2563EB,#7C3AED)">AA</div>
+                            <div class="rec-info">
+                                <div class="rec-name">Adeniji A.</div>
+                                <span class="rec-bank">UBA. 2021457802</span>
+                                </div>
+                                <div class="rec-right">
+                                    <div class="rec-amount">−₦50,000</div>
+                                    <span class="rec-date">May 18, 2026</span>
+                                </div>
+                            </div>
+                            <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#2563EB,#7C3AED)">AB</div>
+                            <div class="rec-info">
+                                <div class="rec-name">Adebayo B.</div>
+                                <span class="rec-bank">GTBank. 0123324569</span>
+                                </div>
+                                <div class="rec-right">
+                                    <div class="rec-amount">−₦5,000</div>
+                                    <span class="rec-date">May 18, 2026 - 10:05 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                       
+                    </div>
+
+                </div>
+
+
+
+            <!-- </div> -->
+
+            <!-- Bottom -->
+
+            <div class="row g-4 mt-1">
+
+                <div class="col-xl-7">
+
+                </div>
+
+                <div class="col-xl-5">
+
+                    <!-- <div class="row g-4">
+
+                        <div class="col-12">
+
+                        </div>
+
+                        <div class="col-12">
+
+                        </div>
+
+                    </div> -->
+
+
+                </div>
+
+            </div>
+<!-- 
+            <footer class="app-footer">
+                <div class="app-footer-inner">
+                    <span>© 2026 SwiftBank. All rights reserved.</span>
+                    <div class="app-footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+            </footer> -->
+
+        </main>
+
+        
+
+    </div>
+</div>
+
+
+<script type="module" src="./Script/firebase.js"></script>
+<script type="module" src="./Script/transfer.js"></script>
+</body>
+</html>

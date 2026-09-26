@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./CSS/sign-in.css" />
+  </head>
+  <body>
+    <section class="container-fluid min-vh-100 d-flex p-0">
+      <!-- LEFT PANEL - hidden on mobile -->
+      <div class="col-lg-5 d-none d-lg-flex left-panel">
+        <div class="logs">
+          <img class="logo" src="./Assets/swiftlogo.png" alt="" />
+          <span class="name">SwiftBank</span>
+        </div>
+
+        <div class="head">
+          <h1>
+            Start banking <br />
+            smarter today
+          </h1>
+          <p>
+            Join 500,000+ Nigerians who manage their money with swift bank-
+            fast, secure, zero-fees.
+          </p>
+        </div>
+
+        <div class="foot">
+          <div class="badge">🛡 CBN Licensed & regulated</div>
+          <div class="badge">✓ NDIC insured deposits</div>
+          <div class="badge">🔒 256-bit SSL encryption</div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL - form -->
+      <div
+        class="col-lg-7 col-12 right-panel d-flex align-items-center justify-content-center"
+      >
+        <div class="form-wrapper">
+          <div class="d-lg-none mb-4 mobile-logo-wrap">
+            <img class="mobile" src="./Assets/swiftlogo.png" alt="" />
+            <span class="name-mobile">SwiftBank</span>
+          </div>
+          <h1 class="mb-1">Welcome back</h1>
+          <p class="text-muted mb-4">Sign in to continue banking.</p>
+
+          <form action="" id="loginForm">
+            <div class="mb-2">
+              <label for="email" class="form-label">Email Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+              <div class="invalid-feedback">Required.</div>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label" for="password">Password</label>
+              <div class="input-wrap">
+                <input
+                  class="form-control"
+                  type="password"
+                  id="password"
+                  placeholder="Create your password"
+                />
+                <span class="eye-toggle" data-target="password">👁️</span>
+              </div>
+            </div>
+
+            <div class="mb-3 rem">
+              <div
+                class="form-check form-switch d-flex align-items-center justify-content-between"
+              >
+                <div>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="rememberMe"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="rememberMe"
+                    style="font-size: 13px"
+                    >Remember me</label
+                  >
+                </div>
+              </div>
+              <a href="#" class="fpss">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-3 login">
+              Login
+            </button>
+          </form>
+
+          <p class="text-center mt-3 foot">
+            New to SwiftBank? <a href="sign-up.html">Create an account →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./Script/firebase.js"></script>
+    <script type="module" src="./Script/login.js"></script>
+  </body>
+</html>

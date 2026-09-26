@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./CSS/bills.css">
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+
+        <aside class="col-lg-2 p-0 sidebar">
+            <div class="logo">
+                <img src="./Assets/swiftlogo.png" alt="">
+                <span class="name">SwiftBank</span>
+            </div>
+            <div class="nav-label">Menu</div>
+            <div class="menu">
+                <div><a class="menu-link" href="dashboard.html"><i class="bi bi-grid-fill"></i> Dashboard</a></div>
+                <div><a class="menu-link" href="transfer.html"><i class="bi bi-arrow-left-right"></i> Transfer</a></div>
+                <div><a class="menu-link" href="history.html"><i class="bi bi-clock-history"></i> History</a></div>
+                <div><a class="menu-link active" href="bills.html"><i class="bi bi-receipt"></i> Bills</a></div>
+                <div><a class="menu-link" href="cards.html"><i class="bi bi-credit-card"></i> Cards</a></div>
+            </div>
+            <div class="nav-label">Account</div>
+            <div class="menu">
+                <div><a class="menu-link" href="profile.html"><i class="bi bi-person"></i> Profile</a></div>
+                <div><a class="menu-link" href="settings.html"><i class="bi bi-gear"></i> Settings</a></div>
+            </div>
+            <div class="side-foot"><i class="bi bi-box-arrow-right"></i> Logout</div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <div class="mobile-topbar d-lg-none">
+            <button class="hamburger" id="hamburger"><i class="bi bi-list"></i></button>
+            <div class="d-flex align-items-center gap-2">
+                <img src="./Assets/swiftlogo.png" width="28" height="28" alt="">
+                <span style="font-weight:700; font-size:15px;">SwiftBank</span>
+            </div>
+        </div>
+
+        <main class="col-lg-10 p-4">
+
+            <div class="row align-items-center mb-4 main-header">
+                <div class="col-lg-6">
+                    <span style="font-size:12px; color:#94A3B8;">Good morning,</span>
+                    <h3 style="font-size:18px; font-weight:700; color:#0F172A; margin:2px 0 0;">Taiwo Ayorinde 👋</h3>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex justify-content-end align-items-center gap-3">
+                        <div class="notify"><i class="bi bi-bell"></i><span class="notif-dot"></span></div>
+                        <div class="profile">
+                            <div class="user-avatar">TA</div>
+                            <span>Taiwo A.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="his-head">
+                <h3>Pay Bills</h3>
+                <span>Pay electricity, TV, data, and more</span>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-xl-12">
+                    <div class="bills-search">
+                        <input type="text" placeholder="Search billers..." id="billerSearch">
+                    </div>
+                    <div class="biller-grid">
+                        <div class="biller-item active" data-type="electricity">
+                            <div class="biller-icon elec"><i class="bi bi-lightning-fill"></i></div>
+                            <span>Electricity</span>
+                        </div>
+                        <div class="biller-item" data-type="tv">
+                            <div class="biller-icon tv"><i class="bi bi-tv-fill"></i></div>
+                            <span>TV/Cable</span>
+                        </div>
+                        <div class="biller-item" data-type="data">
+                            <div class="biller-icon data"><i class="bi bi-wifi"></i></div>
+                            <span>Data</span>
+                        </div>
+                        <div class="biller-item" data-type="airtime">
+                            <div class="biller-icon airtime"><i class="bi bi-phone-fill"></i></div>
+                            <span>Airtime</span>
+                        </div>
+                        <div class="biller-item" data-type="internet">
+                            <div class="biller-icon internet"><i class="bi bi-globe"></i></div>
+                            <span>Internet</span>
+                        </div>
+                        <div class="biller-item" data-type="water">
+                            <div class="biller-icon water"><i class="bi bi-droplet-fill"></i></div>
+                            <span>Water</span>
+                        </div>
+                        <div class="biller-item" data-type="insurance">
+                            <div class="biller-icon insurance"><i class="bi bi-shield-fill-check"></i></div>
+                            <span>Insurance</span>
+                        </div>
+                        <div class="biller-item" data-type="education">
+                            <div class="biller-icon education"><i class="bi bi-mortarboard-fill"></i></div>
+                            <span>Education</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+                <div class="col-xl-8">
+                    <div class="transfer">
+                        <div>
+                            <h3>Bill payment</h3>
+                            <span>Fill in the details below</span>
+                        </div>
+                        <div class="transfer-form">
+                            <div class="mb-3">
+                                <label class="form-label">Biller</label>
+                                <select id="billerSelect" class="form-select">
+                                    <option value="" disabled selected>Select biller</option>
+                                    <option>EKEDC</option>
+                                    <option>IKEDC</option>
+                                    <option>DSTV</option>
+                                    <option>GOTV</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Meter/account number</label>
+                                <input type="text" class="form-control" id="meterNumber" placeholder="Enter number" required>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Amount</label>
+                                <input type="text" class="form-control" id="billAmount" placeholder="" required>
+                            </div>
+                            <small>Available balance: <span id="availableBalance" style="color:#10B981; font-weight:600;">Loading...</span></small>
+                        </div>
+                        <button id="payBtn" class="btn btn-primary confirm">Pay bill</button>
+                    </div>
+                </div>
+
+                <div class="col-xl-4">
+                    <div class="recent">
+                        <div class="sub-recennt">
+                            <h5>Upcoming bills</h5>
+                        </div>
+                        <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#F59E0B,#EF4444)">
+                                <i class="bi bi-lightning-fill"></i>
+                            </div>
+                            <div class="rec-info">
+                                <div class="rec-name">EKEDC Electricity</div>
+                                <span class="rec-bank">Due in 3 days</span>
+                            </div>
+                            <div class="rec-right">
+                                <div class="rec-amount">₦12,500</div>
+                            </div>
+                        </div>
+                        <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#2563EB,#7C3AED)">
+                                <i class="bi bi-tv-fill"></i>
+                            </div>
+                            <div class="rec-info">
+                                <div class="rec-name">DSTV Subscription</div>
+                                <span class="rec-bank">Due in 6 days</span>
+                            </div>
+                            <div class="rec-right">
+                                <div class="rec-amount">₦18,900</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+                <div class="col-xl-12">
+                    <div class="sum">
+                        <div class="txn-panel-header" style="margin-bottom: 16px;">
+                            <h3>Recent Bill Payments</h3>
+                            <a href="history.html">View all</a>
+                        </div>
+                        <div class="table-scroll">
+                        <table class="txn-table">
+                                <thead>
+                                    <tr>
+                                        <th>Biller</th>
+                                        <th>Account/Meter No.</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>EKEDC Electricity</td>
+                                        <td>0123456789</td>
+                                        <td style="color:#EF4444; font-weight:600;">−₦12,500</td>
+                                        <td>Jul 3, 2026 · 19:47</td>
+                                        <td><span class="type-badge sucs">Success</span></td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="app-footer">
+                <div class="app-footer-inner">
+                    <span>© 2026 SwiftBank. All rights reserved.</span>
+                    <div class="app-footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    </div>
+
+<script type="module" src="./Script/firebase.js"></script>
+<script type="module" src="./Script/bills.js"></script>
+</body>
+</html>
+
+

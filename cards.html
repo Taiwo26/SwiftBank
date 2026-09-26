@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./CSS/cards.css">
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+
+        <aside class="col-lg-2 p-0 sidebar">
+            <div class="logo">
+                <img src="./Assets/swiftlogo.png" alt="">
+                <span class="name">SwiftBank</span>
+            </div>
+            <div class="nav-label">Menu</div>
+            <div class="menu">
+                <div><a class="menu-link" href="dashboard.html"><i class="bi bi-grid-fill"></i> Dashboard</a></div>
+                <div><a class="menu-link" href="transfer.html"><i class="bi bi-arrow-left-right"></i> Transfer</a></div>
+                <div><a class="menu-link" href="history.html"><i class="bi bi-clock-history"></i> History</a></div>
+                <div><a class="menu-link" href="bills.html"><i class="bi bi-receipt"></i> Bills</a></div>
+                <div><a class="menu-link active" href="cards.html"><i class="bi bi-credit-card"></i> Cards</a></div>
+            </div>
+            <div class="nav-label">Account</div>
+            <div class="menu">
+                <div><a class="menu-link" href="profile.html"><i class="bi bi-person"></i> Profile</a></div>
+                <div><a class="menu-link" href="settings.html"><i class="bi bi-gear"></i> Settings</a></div>
+            </div>
+            <div class="side-foot"><i class="bi bi-box-arrow-right"></i> Logout</div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <div class="mobile-topbar d-lg-none">
+            <button class="hamburger" id="hamburger"><i class="bi bi-list"></i></button>
+            <div class="d-flex align-items-center gap-2">
+                <img src="./Assets/swiftlogo.png" width="28" height="28" alt="">
+                <span style="font-weight:700; font-size:15px;">SwiftBank</span>
+            </div>
+        </div>
+
+        <main class="col-lg-10 p-4">
+
+            <div class="row align-items-center mb-4 main-header">
+                <div class="col-lg-6">
+                    <span style="font-size:12px; color:#94A3B8;">Good morning,</span>
+                    <h3 style="font-size:18px; font-weight:700; color:#0F172A; margin:2px 0 0;">Taiwo Ayorinde 👋</h3>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex justify-content-end align-items-center gap-3">
+                        <div class="notify"><i class="bi bi-bell"></i><span class="notif-dot"></span></div>
+                        <div class="profile">
+                            <div class="user-avatar">TA</div>
+                            <span>Taiwo A.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="his-head">
+                <h3>My Cards</h3>
+                <span>Manage your card and control how you spend.</span>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-xl-6">
+                    <div class="visa-card">
+                        <div class="visa-top">
+                            <span>SwiftBank</span>
+                            <i class="bi bi-wifi"></i>
+                        </div>
+                        <div class="visa-chip"></div>
+                        <div class="visa-number" id="cardNumber">4821 •••• •••• 9204</div>
+                        <div class="visa-bottom">
+                            <div>
+                                <div class="visa-label">Card Holder</div>
+                                <div class="visa-value" id="cardHolder">Taiwo Ayorinde</div>
+                            </div>
+                            <div>
+                                <div class="visa-label">Expires</div>
+                                <div class="visa-value">08/29</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6">
+                    <div class="card-actions">
+                        <button id="freezeBtn" class="btn-card-action">
+                            <i class="bi bi-lock"></i> Freeze card
+                        </button>
+                        <button id="showDetailsBtn" class="btn-card-action">
+                            <i class="bi bi-eye"></i> Show details
+                        </button>
+                    </div>
+                    <div class="card-settings">
+                        <h5>Card settings</h5>
+                        <div class="setting-row">
+                            <span>Online payments</span>
+                            <label class="switch">
+                                <input type="checkbox" checked id="onlineToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-row">
+                            <span>ATM withdrawals</span>
+                            <label class="switch">
+                                <input type="checkbox" checked id="atmToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-row">
+                            <span>International use</span>
+                            <label class="switch">
+                                <input type="checkbox" id="intlToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-1">
+                <div class="col-xl-7">
+                    <div class="recent">
+                        <div class="sub-recennt">
+                            <h5>Recent card activity</h5>
+                            <a href="history.html">View all</a>
+                        </div>
+                        <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#F59E0B,#EF4444)">
+                                <i class="bi bi-cart"></i>
+                            </div>
+                            <div class="rec-info">
+                                <div class="rec-name">Jumia Nigeria</div>
+                                <span class="rec-bank">Online purchase · Today, 10:45 AM</span>
+                            </div>
+                            <div class="rec-right">
+                                <div class="rec-amount">−₦25,500</div>
+                            </div>
+                        </div>
+                        <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#2563EB,#7C3AED)">
+                                <i class="bi bi-cash-stack"></i>
+                            </div>
+                            <div class="rec-info">
+                                <div class="rec-name">ATM Withdrawal</div>
+                                <span class="rec-bank">Access Bank · Yesterday, 4:30 PM</span>
+                            </div>
+                            <div class="rec-right">
+                                <div class="rec-amount">−₦50,000</div>
+                            </div>
+                        </div>
+                        <div class="sub-recent">
+                            <div class="rec-avatar" style="background: linear-gradient(135deg,#2563EB,#7C3AED)">
+                                <i class="bi bi-cash-stack"></i>
+                            </div>
+                            <div class="rec-info">
+                                <div class="rec-name">MTN Data Subscription</div>
+                                <span class="rec-bank">Monthly Plan · Yesterday, 9:00 AM</span>
+                            </div>
+                            <div class="rec-right">
+                                <div class="rec-amount">−₦18,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5">
+                    <div class="limit">
+                        <div class="semi-limit">
+                            <h5>Card spending limits</h5>
+                            <a href="#">Edit</a>
+                        </div>
+                        <div class="limit-row">
+                            <div class="semi-limit">
+                                <div>Daily withdrawal</div>
+                                <span>₦200K / ₦500K</span>
+                            </div>
+                            <div class="limit-track">
+                                <div class="limit-fill" style="width:40%; background:#2563EB;"></div>
+                            </div>
+                        </div>
+                        <div class="limit-row">
+                            <div class="semi-limit">
+                                <div>Online transactions</div>
+                                <span>₦300K / ₦750K</span>
+                            </div>
+                            <div class="limit-track">
+                                <div class="limit-fill" style="width:40%; background:#10B981;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="app-footer">
+                <div class="app-footer-inner">
+                    <span>© 2026 SwiftBank. All rights reserved.</span>
+                    <div class="app-footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+    </div>
+
+<script type="module" src="./Script/firebase.js"></script>
+<script type="module" src="./Script/cards.js"></script>
+</body>
+</html>
