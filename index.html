@@ -14,37 +14,33 @@
   </head>
   <body>
     <nav class="nav-head">
-      <div class="nav-head1">
-        <div class="nav-head2">
-          <img src="./Assets/swiftlogo.png" alt="" />
-          <span class="name">SwiftBank</span>
-        </div>
+      <a class="nav-head2" href="#home">
+        <img src="./Assets/swiftlogo.png" alt="SwiftBank logo" />
+        <span class="name">SwiftBank</span>
+      </a>
 
-        <div>
-          <ul class="list-head">
-            <li class="list">
-              <a href="#features">Features</a>
-            </li>
-            <li class="list">
-              <a href="#how">How It Works</a>
-            </li>
-            <li class="list">
-              <a href="#security">Security</a>
-            </li>
-            <li class="list">
-              <a href="#">About</a>
-            </li>
-          </ul>
+      <div class="nav-menu" id="navMenu">
+        <ul class="list-head">
+          <li class="list"><a href="#features">Features</a></li>
+          <li class="list"><a href="#how">How It Works</a></li>
+          <li class="list"><a href="#security">Security</a></li>
+          <li class="list"><a href="#">About</a></li>
+        </ul>
+
+        <div class="navgin">
+          <a class="semii-navgin" id="login" href="sign-in.html">Login</a>
+          <a class="semi-navgin" href="sign-up.html">Open Account</a>
         </div>
       </div>
-      <div class="navgin">
-        <a class="semii-navgin" id="login" href="sign-in.html">Login</a>
-        <a class="semi-navgin" href="sign-up.html">Open Account</a>
-      </div>
-      <button class="hamburger" id="hamburgerBtn">
-        <i class="bi bi-list"></i>
-      </button>
-    </nav>
+
+      <button
+        class="hamburger"
+        id="hamburgerBtn"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >☰</button>
+</nav>
 
     <!-- SECTION 1 -->
     <section class="hero" id="home">
@@ -266,7 +262,7 @@
         </div>
       </div>
 
-      <a href="sign-up.html" class="cnt4">Open Account Now</a>
+      <a href="sign-up.html" class="cnt4">Open Account</a>
     </section>
 
     <!-- Section 5 -->
@@ -313,7 +309,7 @@
       </div>
       <br />
       <div class="ctan">
-        <a href="sign-up.html" class="create">Create Account</a>
+        <a href="sign-up.html" class="create">Create</a>
         <a href="sign-in.html" class="log">Login</a>
       </div>
     </section>
